@@ -6,6 +6,7 @@
          apt-get update
          apt-get install -y curl unzip xvfb libxi6 libgconf-2-4
          apt-get install wget sudo unzip
+         apt-get install -y git
          ```
      - download Chrome first:
        ```
