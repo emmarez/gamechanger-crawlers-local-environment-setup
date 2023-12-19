@@ -1,0 +1,58 @@
+## Setup Local Env for GC Development using Docker
+1. Open Docker Desktop, and open the ubuntu container
+2. Install Google Chrome and ChromeDriver
+    - dependencies:
+         ```
+         apt-get update
+         apt-get install -y curl unzip xvfb libxi6 libgconf-2-4
+         apt-get install wget sudo unzip
+         ```
+     - download Chrome first:
+       ```
+         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+         sudo apt install ./google-chrome-stable_current_amd64.deb
+         google-chrome --version
+       ```
+     - download Chromedriver
+         - references: https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/, https://tecadmin.net/setup-selenium-chromedriver-on-ubuntu/
+       ```
+        wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chromedriver-linux64.zip --no-check-certificate
+        unzip chromedriver-linux64.zip 
+        sudo mv /path/to/chromedriver /usr/local/bin
+       ```
+         - tip: to find path
+             ```
+               find $(pwd) -name chromedriver
+             ```
+    - after a successful installation you should be able to run the following from the shell:
+         ```shell
+         chromedriver --version
+         ```
+3. Install Miniconda or Anaconda (Miniconda is much smaller)
+    - https://docs.conda.io/en/latest/miniconda.html
+    - https://www.jamesbower.com/how-to-install-conda-and-miniconda3-on-ubuntu-22-04-lts/
+      ```
+        wget https://repo.anaconda.com/miniconda/Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
+        bash Miniconda3-py310_22.11.1-1-Linux-x86_64.sh -b -p /opt/miniconda
+        rm Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
+        export PATH="/opt/miniconda/bin:$PATH"
+      ```
+    - after a successful installation you should be able to run the following from the shell:
+         ```shell
+         conda --version
+         ```
+4. Create a gamechanger crawlers python3.6 environment:
+     ```shell
+     conda create -n gc-crawlers python=3.6
+     ```
+5. Clone the repo and change into that dir:
+     ```shell
+     git clone https://github.com/dod-advana/gamechanger-crawlers.git
+     cd gamechanger-crawlers
+     ```
+6. Activate the conda environment and install requirements:
+     ```shell
+     conda activate gc-crawlers
+     pip install --upgrade pip setuptools wheel
+     pip install -r ./docker/minimal-requirements.txt
+     ```
