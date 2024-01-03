@@ -4,14 +4,30 @@
     - dependencies:
          ```
          apt-get update
+         ```
+         ```
          apt-get install -y curl unzip xvfb libxi6 libgconf-2-4
-         apt-get install wget sudo unzip
+         ```
+         ```
+         apt-get install wget
+         ```
+         ```
+         apt-get install sudo
+         ```
+         ```
+         apt-get install unzip
+         ```
+         ```
          apt-get install -y git
          ```
      - download Chrome first:
        ```
          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+       ```
+       ```
          sudo apt install ./google-chrome-stable_current_amd64.deb
+       ```
+       ```
          google-chrome --version
        ```
      - download Chromedriver
