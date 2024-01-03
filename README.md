@@ -71,5 +71,5 @@
      ```shell
      conda activate gc-crawlers
      pip install --upgrade pip setuptools wheel
-     pip install -r ./docker/minimal-requirements.txt
+     pip install -r ./docker/core/minimal-requirements.txt
      ```
