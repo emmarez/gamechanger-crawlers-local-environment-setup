@@ -90,7 +90,7 @@
      pip install -r ./docker/core/minimal-requirements.txt
      ```
 9. If you have VSCode, you can attach to your Docker container through there to edit scripts
-10. If you cannot run scripts through the terminal within VSCode, then use an Ubuntu terminal
+10. If you cannot run scripts through the terminal within VSCode, then use a separate Linux terminal
         - note that you MUST activate the conda environment (regardless of terminal) to run any scripts:
         ```
     conda activate gc-crawlers
