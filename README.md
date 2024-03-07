@@ -71,7 +71,18 @@
      git clone https://github.com/dod-advana/gamechanger-crawlers.git
      cd gamechanger-crawlers
      ```
-7. Activate the conda environment and install requirements:
+7. Configure shell
+   ```
+   conda init bash
+   ```
+8. You will need to restart your container
+   - exit container
+   - if it shut down, restart it
+    ```
+    sudo docker start <CONTAINER_NAME>
+    docker exec -it <CONTAINER_NAME> bash
+    ```
+10. Activate the conda environment and install requirements:
      ```shell
      conda activate gc-crawlers
      pip install --upgrade pip setuptools wheel
