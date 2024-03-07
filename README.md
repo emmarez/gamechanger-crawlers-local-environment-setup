@@ -1,6 +1,10 @@
 ## Setup Local Env for GC Development using Docker
-1. Open Docker Desktop, and open the ubuntu container
-2. Install Google Chrome and ChromeDriver
+1. Open Docker Desktop, and build a new container with an ubuntu image
+    ```
+    sudo docker pull ubuntu
+    sudo docker run -ti ubuntu /bin/bash
+    ```
+3. Install Google Chrome and ChromeDriver
     - dependencies:
          ```
          apt-get update
@@ -45,7 +49,7 @@
          ```shell
          chromedriver --version
          ```
-3. Install Miniconda or Anaconda (Miniconda is much smaller)
+4. Install Miniconda or Anaconda (Miniconda is much smaller)
     - https://docs.conda.io/en/latest/miniconda.html
     - https://www.jamesbower.com/how-to-install-conda-and-miniconda3-on-ubuntu-22-04-lts/
       ```
@@ -58,16 +62,16 @@
          ```shell
          conda --version
          ```
-4. Create a gamechanger crawlers python3.6 environment:
+5. Create a gamechanger crawlers python3.6 environment:
      ```shell
      conda create -n gc-crawlers python=3.6
      ```
-5. Clone the repo and change into that dir:
+6. Clone the repo and change into that dir:
      ```shell
      git clone https://github.com/dod-advana/gamechanger-crawlers.git
      cd gamechanger-crawlers
      ```
-6. Activate the conda environment and install requirements:
+7. Activate the conda environment and install requirements:
      ```shell
      conda activate gc-crawlers
      pip install --upgrade pip setuptools wheel
