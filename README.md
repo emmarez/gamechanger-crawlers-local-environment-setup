@@ -91,3 +91,7 @@
      ```
 9. If you have VSCode, you can attach to your Docker container through there to edit scripts
 10. If you cannot run scripts through the terminal within VSCode, then use an Ubuntu terminal
+        - note that you MUST activate the conda environment to run any scripts:
+        ```
+    conda activate gc-crawlers
+        ```
