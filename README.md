@@ -4,7 +4,7 @@
     sudo docker pull ubuntu
     sudo docker run -ti ubuntu /bin/bash
     ```
-3. Install Google Chrome and ChromeDriver
+2. Install Google Chrome and ChromeDriver
     - dependencies:
          ```
          apt-get update
@@ -49,7 +49,7 @@
          ```shell
          chromedriver --version
          ```
-4. Install Miniconda or Anaconda (Miniconda is much smaller)
+3. Install Miniconda or Anaconda (Miniconda is much smaller)
     - https://docs.conda.io/en/latest/miniconda.html
     - https://www.jamesbower.com/how-to-install-conda-and-miniconda3-on-ubuntu-22-04-lts/
       ```
@@ -62,29 +62,32 @@
          ```shell
          conda --version
          ```
-5. Create a gamechanger crawlers python3.6 environment:
+4. Create a gamechanger crawlers python3.6 environment:
      ```shell
      conda create -n gc-crawlers python=3.6
      ```
-6. Clone the repo and change into that dir:
+5. Clone the repo and change into that dir:
      ```shell
      git clone https://github.com/dod-advana/gamechanger-crawlers.git
      cd gamechanger-crawlers
      ```
-7. Configure shell
+6. Configure shell
    ```
    conda init bash
    ```
-8. You will need to restart your container
+7. You will need to restart your container
    - exit container
    - if it shut down, restart it
     ```
     sudo docker start <CONTAINER_NAME>
     docker exec -it <CONTAINER_NAME> bash
     ```
-10. Activate the conda environment and install requirements:
+8. Activate the conda environment and install requirements:
      ```shell
      conda activate gc-crawlers
+     cd gamechanger-crawlers
      pip install --upgrade pip setuptools wheel
      pip install -r ./docker/core/minimal-requirements.txt
      ```
+9. If you have VSCode, you can attach to your Docker container through there to edit scripts
+10. If you cannot run scripts through the terminal within VSCode, then use an Ubuntu terminal
